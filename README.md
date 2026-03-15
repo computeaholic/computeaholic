@@ -1,7 +1,7 @@
 # Jeff Smith
+Backend & Platform Engineer
 
-Backend & Platform Engineer  
-Identity-first infrastructure • Durable authority systems • Deterministic backend design  
+Identity-first infrastructure • Durable authority systems • Deterministic backend design
 
 ---
 
@@ -21,52 +21,89 @@ I decompose large systems into bounded, self-contained slices that demonstrate c
 
 ---
 
-## Highlighted Repositories
+## ThreadForge Platform
 
-### threadforge-fabric  
-Minimal Kubernetes substrate: registry, identity plane, Postgres, Prometheus.  
-Kustomize-only. No runtime or analytics layers.
+ThreadForge is a layered platform architecture for executing distributed services and AI agents using workload identity, service mesh authentication, and policy-driven communication boundaries.
 
-### threadforge-identity-surface  
-SPIRE-based identity plane with digest enforcement and admission controls.
+```mermaid
+flowchart TD
 
-### threadforge-secure-runtime  
+    W[Agents / Workloads]
+
+    C[Containment Surface
+    Authorization Policy]
+
+    R[Secure Runtime
+    Identity-Gated Services]
+
+    I[Identity Surface
+    SPIFFE / SPIRE]
+
+    F[Fabric
+    Kubernetes Infrastructure]
+
+    W --> C
+    C --> R
+    R --> I
+    I --> F
+```
+
+Platform reference architecture:
+
+https://github.com/computeaholic/threadforge-reference-architecture
+
+Platform Layers
+
+threadforge-containment-surface
+Policy-driven workload containment validation and redteam harness.
+
+threadforge-secure-runtime
 Identity-gated backend runtime with durable authority ledger and metrics.
 
-### threadforge-containment-surface  
-Admission and supply-chain validation harness demonstrating bounded capabilities.
+threadforge-identity-surface
+SPIRE-based workload identity plane with admission enforcement.
 
----
+threadforge-fabric
+Minimal Kubernetes substrate: registry, identity plane, Postgres, and Prometheus.
 
-## Backend Services
+threadforge-agent-containment-lab
+Demonstration of identity-based containment for AI agent workloads.
 
-- Document Service — deterministic domain modeling and validation  
-- Job Processor Service — async worker design with explicit retry boundaries  
-- Reservation Service — transactional correctness and concurrency control  
+Backend Services
 
----
+These repositories demonstrate deterministic backend design patterns.
 
-## Engineering Approach
+Document Service
+Deterministic domain modeling and validation.
 
-- Claims backed by artifacts  
-- Fail-closed design  
-- Minimal scope, explicit assumptions  
-- Mechanical CI gates  
-- Comfortable with rigorous review  
+Job Processor Service
+Async worker architecture with explicit retry and failure boundaries.
+
+Reservation Service
+Transactional correctness and concurrency control.
+
+Engineering Approach
+
+Claims backed by artifacts
+
+Fail-closed design
+
+Minimal scope with explicit assumptions
+
+Mechanical CI gates
+
+Comfortable with rigorous review
 
 AI tools are used to accelerate disciplined execution — not to replace engineering judgment.
 
----
+Current Focus
 
-## Current Focus
-
-Pursuing senior backend / platform roles where architectural clarity and system integrity matter.
+Pursuing senior backend or platform engineering roles where architectural clarity and system integrity matter.
 
 Open to limited, well-scoped consulting engagements.
 
----
+Contact
 
-## Contact
+Email: sendtojeffsmith@gmail.com
 
-Email: sendtojeffsmith@gmail.com  
-GitHub: @computeaholic  
+GitHub: https://github.com/computeaholic
