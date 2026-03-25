@@ -1,5 +1,4 @@
 Jeff Smith
-
 Backend & Platform Engineer
 
 Identity-first infrastructure • Durable backend systems • Kubernetes-native design
@@ -8,143 +7,68 @@ Overview
 
 I build backend and infrastructure systems where identity, authority, and runtime behavior are explicit and inspectable.
 
-My work focuses on:
+Most of my work sits at the intersection of:
 
 Kubernetes-native identity (SPIRE / SPIFFE)
-
 Admission and supply-chain enforcement
-
 Durable authority attribution (PostgreSQL)
-
 Observable backend systems (Prometheus)
-
 Explicit architectural boundaries
 
-Systems are decomposed into bounded, self-contained slices that demonstrate both capabilities and limits.
+I prefer to break systems into small, bounded slices that make both capabilities and limits obvious. Each system is designed to be independently verifiable.
 
 System Design Lens
 
-When designing distributed systems I prioritize:
+When I design distributed systems, I bias toward:
 
 Workload identity over network trust
-
 Explicit authority attribution for durable actions
-
 Deterministic infrastructure layers
-
 Fail-closed security boundaries
-
 Clear separation between infrastructure and application runtime
 
-These principles shape the ThreadForge architecture, which decomposes platform infrastructure into explicit layers.
+These principles guide how I structure both infrastructure and backend services.
 
-ThreadForge Architecture
+Infrastructure Work
 
-ThreadForge is a layered platform architecture for executing distributed services and AI agents using workload identity, service mesh authentication, and policy-driven communication boundaries.
+I’ve been building a set of Kubernetes-based infrastructure slices focused on identity-first execution and policy enforcement.
 
-Agents / Workloads
-        ↓
-Containment Surface
-        ↓
-Secure Runtime
-        ↓
-Identity Surface
-        ↓
-Fabric
+These systems explore:
 
-Reference architecture:
+Workload identity using SPIRE / SPIFFE
+Node and workload attestation (PSAT)
+Digest-based admission enforcement
+Internal registry containment
+Identity-aware service communication (Istio mTLS + policy)
 
-https://github.com/computeaholic/threadforge-reference-architecture
-
-Infrastructure Repositories
-threadforge-fabric
-
-Minimal Kubernetes substrate providing:
-
-internal container registry
-
-SPIRE identity plane
-
-PostgreSQL stateful store
-
-Prometheus monitoring
-
-https://github.com/computeaholic/threadforge-fabric
-
-threadforge-identity-surface
-
-Workload identity and admission enforcement surface:
-
-SPIRE server and agents
-
-PSAT-based node attestation
-
-digest-based admission enforcement
-
-https://github.com/computeaholic/threadforge-identity-surface
-
-threadforge-secure-runtime
-
-Identity-gated backend runtime:
-
-SPIRE-issued workload identity
-
-durable authority ledger (PostgreSQL)
-
-Prometheus metrics exposure
-
-https://github.com/computeaholic/threadforge-secure-runtime
-
-threadforge-containment-surface
-
-Containment validation harness demonstrating:
-
-admission enforcement
-
-supply-chain policy enforcement
-
-bounded authority claims
-
-https://github.com/computeaholic/threadforge-containment-surface
+The goal is to make runtime behavior explicit, enforceable, and auditable rather than assumed.
 
 Backend Services
 
-These repositories demonstrate application-layer backend design patterns.
+These repos focus on application-layer patterns:
 
 document-service
-
-Deterministic validation and domain boundary design.
+Deterministic validation and domain boundaries
 
 job-processor-service
-
-Async worker system demonstrating retry boundaries and idempotency.
+Async worker model with retry + idempotency guarantees
 
 reservation-service
-
-Transactional service demonstrating concurrency control and correctness guarantees.
+Transactional service with concurrency control
 
 Engineering Approach
-
 Artifact-first engineering
-
 Fail-closed infrastructure
-
-Explicit architectural boundaries
-
+Explicit boundaries over implicit behavior
 Minimal surface area
-
 Mechanical CI enforcement
 
-AI tools are used to accelerate disciplined implementation — not replace engineering judgment.
+I use AI tools to move faster, but all systems are designed and validated deliberately.
 
 Current Focus
-
-Backend and platform engineering roles
-
+Backend / platform engineering roles
 Identity-bound distributed systems
-
-Infrastructure architecture and containment models
-
+Infrastructure and containment design
 Contact
 
 Email
