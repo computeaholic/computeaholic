@@ -1,74 +1,100 @@
 Jeff Smith
+
 Backend & Platform Engineer
 
-Identity-first infrastructure • Durable backend systems • Kubernetes-native design
+Identity-first infrastructure • Deterministic systems • Kubernetes-native design
 
 Overview
 
-I build backend and infrastructure systems where identity, authority, and runtime behavior are explicit and inspectable.
+I build backend and infrastructure systems where identity, authority, and runtime behavior are explicit, enforced, and verifiable.
 
-Most of my work sits at the intersection of:
+My work focuses on:
 
-Kubernetes-native identity (SPIRE / SPIFFE)
+Kubernetes-native workload identity (SPIRE / SPIFFE)
 Admission and supply-chain enforcement
+Deterministic validation pipelines
 Durable authority attribution (PostgreSQL)
-Observable backend systems (Prometheus)
-Explicit architectural boundaries
+Observable backend systems (Prometheus, Tempo)
 
-I prefer to break systems into small, bounded slices that make both capabilities and limits obvious. Each system is designed to be independently verifiable.
+Systems are designed as bounded, self-contained slices with clear guarantees and failure modes.
+
+I don’t assume systems are correct — I design them so they can prove they are.
 
 System Design Lens
 
-When I design distributed systems, I bias toward:
+When designing distributed systems, I bias toward:
 
 Workload identity over network trust
 Explicit authority attribution for durable actions
-Deterministic infrastructure layers
-Fail-closed security boundaries
+Deterministic execution and validation layers
+Fail-closed boundaries under uncertainty
 Clear separation between infrastructure and application runtime
 
-These principles guide how I structure both infrastructure and backend services.
+These principles ensure systems remain inspectable, enforceable, and predictable under real conditions.
 
 Infrastructure Work
 
-I’ve been building a set of Kubernetes-based infrastructure slices focused on identity-first execution and policy enforcement.
+I build Kubernetes-based infrastructure systems focused on identity-first execution and policy enforcement.
 
-These systems explore:
+Key areas:
 
-Workload identity using SPIRE / SPIFFE
+Workload identity (SPIRE / SPIFFE)
 Node and workload attestation (PSAT)
 Digest-based admission enforcement
 Internal registry containment
 Identity-aware service communication (Istio mTLS + policy)
 
-The goal is to make runtime behavior explicit, enforceable, and auditable rather than assumed.
+These systems are designed to make runtime behavior explicit and auditable, rather than implicit.
 
+DevForge — Execution Integrity System
+
+DevForge is a deterministic repository analysis system that answers:
+
+Can this code be trusted to behave correctly under real conditions?
+
+It evaluates execution reliability, not just static structure.
+
+Key properties:
+
+Deterministic classification (trustworthy, mixed-risk, untrustworthy)
+Fail-closed behavior when signal quality is insufficient
+Replay consistency enforcement (no stale or divergent results)
+Detection of instability across repeated evaluations
+Structured, explainable output tied to observable signals
+
+DevForge is built to surface hidden failure modes such as:
+
+non-deterministic execution
+incomplete signal coverage
+implicit dependencies
 Backend Services
 
-These repos focus on application-layer patterns:
+Application-layer systems focused on correctness and boundaries:
 
 document-service
-Deterministic validation and domain boundaries
+Deterministic validation and strict domain boundaries
 
 job-processor-service
-Async worker model with retry + idempotency guarantees
+Async worker model with idempotency and explicit retry control
 
 reservation-service
-Transactional service with concurrency control
+Transactional service with concurrency and integrity guarantees
 
 Engineering Approach
 Artifact-first engineering
-Fail-closed infrastructure
+Deterministic validation over assumptions
+Fail-closed system design
 Explicit boundaries over implicit behavior
 Minimal surface area
 Mechanical CI enforcement
 
-I use AI tools to move faster, but all systems are designed and validated deliberately.
+AI tools accelerate implementation, but correctness and behavior are always deliberately designed and verified.
 
 Current Focus
-Backend / platform engineering roles
+Backend and platform engineering roles
 Identity-bound distributed systems
-Infrastructure and containment design
+Deterministic validation and execution integrity
+Infrastructure enforcement and containment
 Contact
 
 Email
