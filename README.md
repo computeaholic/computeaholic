@@ -46,23 +46,6 @@ TruthFast is source-available under the PolyForm Perimeter License 1.0.1. Certai
 
 ---
 
-## DevForge
-
-**DevForge** grew out of a related question:
-
-> Can a repository demonstrate that its behavior is trustworthy under real conditions?
-
-It is a deterministic repository-analysis and execution-integrity system designed to surface things that ordinary static inspection can miss:
-
-- nondeterministic behavior
-- incomplete evidence
-- stale or divergent evaluation
-- hidden dependencies
-- unstable execution
-- unjustified confidence
-
-The emphasis is not on generating another score. It is on making the reasoning behind a conclusion inspectable.
-
 ---
 
 ## How I think about systems
@@ -104,8 +87,6 @@ My workflow is highly iterative:
 7. repeat until the system earns the claim.
 
 AI accelerates implementation, research, hostile review, and iteration. It does not replace the responsibility to decide what the system should mean or to verify that reality matches the design.
-
-TruthFast and DevForge are products of that process.
 
 ---
 
