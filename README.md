@@ -5,16 +5,19 @@
 I build infrastructure and software systems where authority is explicit, failure is observable, and important claims are backed by executable evidence rather than configuration or documentation alone.
 
 A lot of my work lives around Kubernetes, workload identity, software supply-chain controls, deterministic validation, and the uncomfortable question:
+
 > How do you know the system actually did what you think it did?
 
 That question has pulled me pretty far down the rabbit hole.
 
 ---
+
 ## TruthFast
 
 My current flagship project is **[TruthFast](https://github.com/computeaholic/TruthFast)**, an executable assurance reference architecture for identity-bound consequential execution.
 
 TruthFast combines:
+
 - SPIFFE / SPIRE workload identity
 - Kubernetes and policy enforcement
 - software supply-chain integrity
@@ -29,40 +32,46 @@ TruthFast combines:
 The central idea is simple:
 
 > **The unit of assurance is not the component. It is the justified conclusion about an identity-bound operation.**
+
 The system is intentionally built so that proof cannot quietly repair the state it is evaluating. Failure, blocked execution, denial, trust continuity, evidence integrity, and recovery are meant to be exercised rather than assumed.
 
 TruthFast V1 was reconstructed from source through a destructive Golden Boot, exercised through its supported demonstrations and failure witnesses, and qualified against an exact source revision.
 
 The architecture paper is publicly citable:
-**TruthFast: Constitutional Assurance for Identity-Bound Consequential Execution**
+
+**TruthFast: Constitutional Assurance for Identity-Bound Consequential Execution**  
 DOI: **10.5281/zenodo.22548396**
 
 TruthFast is source-available under the PolyForm Perimeter License 1.0.1. Certain mechanisms are patent pending.
 
 ---
+
+---
+
 ## How I think about systems
 
 I tend to reach for the same principles regardless of the implementation:
 
-**Identity before location.**
+**Identity before location.**  
 Network position is not authority.
 
-**One owner for a state transition.**
+**One owner for a state transition.**  
 Observers and consumers should not quietly become alternate authorities.
 
-**Failure should stay failure.**
+**Failure should stay failure.**  
 Unavailable, blocked, denied, and failed are different facts and should remain different facts.
 
-**Evidence should come from the thing that owns the truth.**
+**Evidence should come from the thing that owns the truth.**  
 A dashboard or verifier should not manufacture the state it later claims to have observed.
 
-**Determinism where meaning matters.**
+**Determinism where meaning matters.**  
 Distributed systems contain legitimate variability. Security-bearing differences should not disappear inside that variability.
 
-**Break things deliberately.**
+**Break things deliberately.**  
 A fail-closed claim is much more interesting after the dependency has actually failed.
 
 ---
+
 ## Building with AI
 
 A significant part of my recent work has been exploring what becomes possible when AI is treated as a serious engineering collaborator rather than a code-completion tool.
@@ -76,9 +85,11 @@ My workflow is highly iterative:
 5. preserve the evidence,
 6. repair the first incorrect assumption,
 7. repeat until the system earns the claim.
+
 AI accelerates implementation, research, hostile review, and iteration. It does not replace the responsibility to decide what the system should mean or to verify that reality matches the design.
 
 ---
+
 ## Technical territory
 
 Most of my recent work touches some combination of:
@@ -97,9 +108,11 @@ Most of my recent work touches some combination of:
 - deterministic validation
 - distributed-system failure semantics
 - security research and adversarial testing
+
 I also maintain smaller backend systems exploring transactional correctness, idempotent workers, validation boundaries, and concurrency.
 
 ---
+
 ## What I am interested in
 
 I am especially interested in work involving:
@@ -117,6 +130,7 @@ I am especially interested in work involving:
 I like difficult systems, skeptical reviewers, and problems where the details matter.
 
 ---
+
 ## Contact
 
 **Email:** [sendtojeffsmith@gmail.com](mailto:sendtojeffsmith@gmail.com)
